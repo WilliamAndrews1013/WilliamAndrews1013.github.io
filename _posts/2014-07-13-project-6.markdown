@@ -1,11 +1,12 @@
 ---
 layout: default
 modal-id: 6
-date: 2014-07-15
-img: submarine.png
+date: 2025-07-11
+img: opengl.png
 alt: image-alt
-project-date: April 2014
-client: Start Bootstrap
-category: Web Development
-description: Use this area of the page to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
+project-date: November 2025
+category: Graphics Programming, C++
+description: This is a basic graphics renderer that I started to work on to learn OpenGL and graphics programming. I am currently following the Learning OpenGL book. My goals is to eventually build a 2D game from scratch in C++ using OpenGL
+title: OpenGL Graphics Renderer
+gameplay: "https://www.youtube.com/embed/ilAQTHdUNyM?si=ihRuYZIeVP7GKxkt"
 ---

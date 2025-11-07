@@ -15,7 +15,9 @@
           <div class="modal-body">
             <h2>{{ post.title }}</h2>
             <hr class="star-primary">
-            <img src="img/portfolio/{{ post.img }}" class="img-responsive img-centered" alt="{{ post.alt }}">
+            {% if post.gameplay %}
+            <iframe width="560" height="315" src="{{ post.gameplay }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            {% endif %}
             {% if post.description %}
             <p>{{ post.description }}</p>
             {% endif %}
@@ -38,6 +40,11 @@
               {% if post.itch %}
               <li>itch.io:
                 <Strong><a href="{{ post.itch }}">{{ post.itch }}</a></strong>
+              </li>
+              {% endif %}
+              {% if post.github %}
+              <li>
+                <Strong><a href="{{ post.github }}">Github</a></strong>
               </li>
               {% endif %}
             </ul>
