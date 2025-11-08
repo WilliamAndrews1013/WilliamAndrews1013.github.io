@@ -9,5 +9,5 @@ category: Unity, C#
 description: This project was for a game jam where the theme was chain reaction. I was part of a team of 8 and 1 of 2 programmers. My tasks for this 48 hour game jam was player movement and making sure the co op worked properly. I also partook a lot in the game design process and solving the merge conflicts that arose throughout the game jam.
 itch: https://fcozzuto.itch.io/tag-em-all
 title: TAG-'EM-ALL
-gameplay: "https://www.youtube.com/embed/lGtOxtxj7sc?si=TMZmM_ZQ96KjY5Ms"
+gameplay: "https://www.youtube.com/embed/uK4HuwBGPGg?si=vD0iwUj_hoTsoMYO"
 ---

@@ -8,5 +8,5 @@ project-date: September 2024
 category: Unity, C#
 description: This game was made for my first assignment in my Game Design class. The goal was to create a FPS game where there were waves of enemy that would come at you until you die. We had to also have 2 different types of enemies but as for the rest we were free to do as we liked. I decided to build a map based out of the desert. This assignment got me a 100%. This was made in Unity
 title: FPS Assignment
-gameplay: "https://www.youtube.com/embed/Sljiokz0Vgc?si=bjnVof6KS2FuCVbL"
+gameplay: "https://www.youtube.com/embed/OAeObSH4wu0?si=yVOzwlQRdyzJ3Sa_"
 ---
