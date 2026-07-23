@@ -1,0 +1,79 @@
+---
+title: '[DevLog 01] The Start of something new'
+date: '2026-07-22'
+lastmod: '2026-07-22'
+tags: ['C++', 'raylib', 'devlog']
+draft: false
+summary: Introduction of the game I am working on and going over what has been done as of now on the game and what I am working on next for the game.
+---
+
+## Introduction
+
+Welcome to my devlog. This is the first time I am ever doing this and hopefully not the last. My goal with this series of devlogs is to keep me accountable with working on this game and be able to explain how I am building it at the same time for whoever might be interested (Let's be real it'll be so I can remember why I made certain decisions when I don't understand the code later on). Who knows maybe I'll transform these into videos at some point but that's a problem for a later day.
+
+## The Big Idea
+
+Recently (like everyone on planet earth), I've been getting more and more into the rougelike and deck building games. This idea was brainstormed as a potential idea for a GameJam that I recently participated in. In the end, we ended going a different route (still a game that incorporated cards). From the time that my team had spoken about the idea of creating a deck builder chess game, I loved it and knew it was something I wanted to absolutly bring to life. Not because I love chess, to the contrary I am a terrible chess player and have no idea what I am doing everytime I am playing. But something about the idea of playing chess where you could have cards give you different moves then regular chess just intrigued me. So I put aside all my other project ideas and started working on this before the drive or interest left. 
+
+Let's dive into my choices for the tech stack for this game.
+
+## Tech Stack
+
+I decided, since this game was going to be 2D (I had thought of 3D and I intelligently decided against it). When I started planning this game, I already new I wanted to work with C++ since I had used Unity and Godot for school work as well as game jams and personal projects. I wanted to try something new, so I decieded that I was going to use C++ and use the Raylib library. 
+
+## ECS
+
+Before I started this project I was working on building a very basic openGL game which I had given up on. In that project I had a basic ECS system built which I decided the transfer over to this project so it wouldn't be rendered useless. This system works with a sparse mapping where I have two arrays, a sparse array that maps the EntityIDs to an index and a dense array that stores the actual components. I decided to do it this way because I wanted to know how things work. Had I used a library like EnTT, I probably wouldn't have taken the time to properly understand what was going on.
+
+This is also useful because I can create entities for all the chess pieces and then add all the components that they need to that specific entity. Below is an example on how I use the ECS to create a piece.
+```C++:Components.hh
+ struct ChessPieceComponent {
+    PieceType type;
+    PieceColor color;
+    bool hasMoved;
+    bool isCaptured;
+  };
+
+  struct BoardPositionComponent {
+    int col;
+    int row;
+  };
+
+  struct SelectionStateComponent {
+    bool isSelected;
+    bool isLegalMoveTarget;
+    bool isLastMoveFrom;
+    bool isLastMoveTo;
+    bool isInCheck;
+  };
+```
+
+```c++:example for creating pieces
+ECS::EntityID e = m_Registry.CreateEntity();
+m_Registry.AddComponent(e, ChessPieceComponent { type, color, false, false} );
+m_Registry.AddComponent(e, BoardPositionComponent { col, row} );
+m_Registry.AddComponent(e, SelectionStateComponent { false, false, false, false, false });
+```
+
+## What Has Been Done To This Day?
+
+As of right now, a basic chess game is fully functional, albeit, I have to player for both colors and the pieces are currently letters and not their actual piece image. I have implemented piece movement, captures, promotions, capture promotions, en passant, and castling. We also have check/checkmate detection. The movement is fairly straight forward where we check the type of piece that was clicked and it's position. We then call a function to generate all the legal moves and returns a vector of all those legal moves. The move generation funtion generates all moves and also makes sure to not allow moves that would put your king in check.
+
+<video controls>
+    <source
+        src="/static/videos/chessGame.mp4"
+        type="video/mp4"
+    />
+</video>
+
+Recently, I just finished creating very basic implementation for the cards where I can Initialize a draw pile and then draw a hand from that pile (which is only 12 cards right now and it generates the 6 card ideas I have 2 times). The array of card types get shuffled and get placed randomly in the vector. We then get draw and hand and display 5 cards on the screen.
+
+![cards](/static/images/cardsImage.png)
+
+![cardHand](/static/images/cardHandInit.png)
+
+## What's next on the agenda?
+
+Next on the agenda is to fully implement the card system and maybe some card art? (It won't be anything extraordinary). I plan to make another one of these post either when I'm fully done the card or when I feel like enough has been implemented to type up another blog post.
+
+Until next time!
