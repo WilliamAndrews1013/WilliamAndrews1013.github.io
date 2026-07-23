@@ -2,7 +2,7 @@
 const siteMetadata = {
   title: 'Wags Dev',
   author: 'William Andrews',
-  headerTitle: 'TailwindBlog',
+  headerTitle: 'William Andrews',
   description: 'A blog created with Next.js and Tailwind.css',
   language: 'en-us',
   theme: 'system', // system, dark or light
