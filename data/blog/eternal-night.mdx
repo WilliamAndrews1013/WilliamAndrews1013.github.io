@@ -1,7 +1,7 @@
 ---
 title: 'Eternal Night: GameJam Estival Sherbrooke'
-date: '2026-07-22'
-lastmod: '2026-07-22'
+date: '2026-07-21'
+lastmod: '2026-07-21'
 tags: ['Godot', 'GDScript', 'GameJam']
 draft: true
 summary: In Eternal Night, you fight for survival against an invisible and unbeatable enemy that approaches you. You try to survive as long as you can by managing your stats and avoiding being engulfed by the Darkness.
@@ -10,3 +10,21 @@ summary: In Eternal Night, you fight for survival against an invisible and unbea
 ## Introduction
 
 This project was a game jam where I was part of a 6 person team. I was 1 of the 3 programmers. My sole focus for this 48 hour game jam was the card functionalities and everything else card related. This was my first time using Godot and GDScript and it was a real learning experience figuring out how everything worked in such a short time span.
+
+## My Contribution
+
+In this game I was working on the card functionalities. On friday night, I started with getting the cards to just display in 5 pre set spots. That worked fine when we had 5 cards but everytime we had like even numbers of cards, the layout would look weird, but that was all that I did on friday night. 
+
+On saturday, I decided to look up some card fanning and implement one that the whole team liked, which would then work based on our hand size. Once I was happy with the card fanning within the card selection phase, I moved onto making some card hover shaders. I looked online about shaders and came across some Balatroesque hover shaders which I decided to implement. This took me a really long time to implement since this was my first time working with shaders and I had no idea what I was doing but in the end we got a little shake when you hover a card. Once I completed the hover, I went on to create a shader to make the cards dissolve when we click on one and for when we randomly got rid or cards. This one was slightly easier as I decided to follow a youtube video on how to implement a dissolve shader. I then downloaded a bunch of difference noise images and went through all of them to determine which dissolve effects looked the best. I then decided to stay up all night trying to keep working on the game but at some point we became delirous and needed a lot of sleep.
+
+On Sunday, We only had until 2 pm to get a playbale version of the game working. I woke up it was 6am and straight away I was working trying to finish the game. The only problem was we were waiting on 1 teammate to explain how the godot quick time events worked because we got the code late and night and could not figure out how it works. Once he showed up then we got to work straight away. The last thing that I really worked on was flipping our card for when you lose the battle against the darkness. For some reason, something with the card fanning code that I had written, the cards didn't want to flip. I spent most of the day trying to figure it out and finally not long before the submission time I figured out a way to get the card to flip and we finalized the game into a final build.
+
+# The Verdict
+
+This was a bug learning experience as I was learning to use Godot and working with shaders. My teammates were helpful with learning Godot, even though they were also learning, but also helpful with implementation design and thinking differently then the way I would do things and vice versa. It was great fun as these game jams are always fun and meeting great people as well. Even though our game was finished with bugs and being very unbalanced we still managed to finish the game despite all being new to Godot.
+
+# Post Game Jam 
+
+After the game jam was done. There were a couple of bugs that bothered me even though they were really really small. The first bug I went back and fixed post game jam was that sometimes you would select a card and then it wouldn't dissolve after the click but it would then also be the randomly selected card to get deleted after the first selection. This was a simple solution, I just needed to make sure to remove the card from the list before we randomly select a card. The next thing I decided to do wasn't a bug but more of a balancing fix. While testing and playing our game, the swords would always be dominant with random cards displaying and sometimes you would only get sword cards. I decieded to go in and add a weight to the cards and then randomly select cards based on their weights. That helped to get the other cards to show up and be able to survive a bit longer. The rest of the fixes I did was adding a slight delay in between phases just so the game transitions smoother and not just a sudden transition to the next phase.
+
+There is still a lot of balancing to do to the game and a lot of QOL things that could be done to make the game better and easier to understand but those fixes will most likely never come or maybe I'll decide to come back to this game some point in time because I did enjoy working on it and I enjoyed working on a game in GOdot and would like to come back to it at some point to either make a new game or continue working on this one and make it something that I am proud of.

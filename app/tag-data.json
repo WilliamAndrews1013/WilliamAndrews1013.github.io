@@ -1,5 +1,9 @@
 {
-  "c": 1,
+  "c": 4,
   "raylib": 1,
-  "devlog": 1
+  "devlog": 1,
+  "unity": 3,
+  "gamejam": 4,
+  "godot": 1,
+  "gdscript": 1
 }
